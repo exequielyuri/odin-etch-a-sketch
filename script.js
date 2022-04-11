@@ -13,10 +13,9 @@ for (let i=0; i < dimension**2; i++) {
 
 cells.forEach((cell) => {
     cell.classList.add("cell");
-    cell.textContent = "#";
     container.appendChild(cell);
     cell.addEventListener('mouseover', () => cell.style.cssText = "background-color: black");
 });
 
-container.style.cssText = `grid-template-columns: repeat(${dimension}, auto)`;
+container.style.cssText = `grid-template-columns: repeat(${dimension}, 1fr)`;
 
