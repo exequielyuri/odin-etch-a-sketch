@@ -1,0 +1,13 @@
+#container {
+    display: grid;
+    grid-gap: 3px;
+}
+
+.cell {
+    color: blue;
+    background-color: green;
+}
+
+.cell:hover {
+    background-color: blue;
+}
