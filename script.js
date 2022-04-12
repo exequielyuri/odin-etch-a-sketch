@@ -4,7 +4,7 @@ function changeBoardSize() {
 }
 
 function deleteCells() {
-    cells.forEach(cell => grid.removeChild(cell));
+    cells.forEach((cell) => grid.removeChild(cell));
     cells = [];
 }
 
@@ -15,11 +15,15 @@ function createGrid(dimension=16) { // default: 16*16
 
     cells.forEach((cell) => {
         cell.classList.add("cell");
-        cell.addEventListener('mouseover', ()=>cell.style.cssText = `opacity: 1`);
+        cell.addEventListener('mouseover', ()=>cell.style.setProperty("opacity", 1));
         grid.appendChild(cell);
     });
 
     grid.style.cssText = `grid-template-columns: repeat(${dimension}, auto)`;
+}
+
+function erase() {
+    cells.forEach((cell) => cell.style.setProperty("opacity", 0));
 }
 
 const grid = document.getElementById("grid");
@@ -27,6 +31,7 @@ const board = document.getElementById("board");
 const sizeSlider = document.getElementById("size-slider");
 const pixelSlider = document.getElementById("pixel-slider");
 const colorPicker = document.getElementById("color-picker");
+const eraseBtn = document.getElementById("erase");
 
 let cells = [];
 createGrid();
@@ -37,3 +42,4 @@ pixelSlider.addEventListener('mouseup', () => {
     createGrid(pixelSlider.value);
     changeBoardSize();
 });
+eraseBtn.addEventListener('click', erase);
