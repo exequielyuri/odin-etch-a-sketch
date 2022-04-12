@@ -13,6 +13,27 @@ body {
     background: lightpink;
 }
 
+#text {
+    width: 50vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    font-family: "Cabin Sketch", monospace;
+    font-size: 9vw;
+    text-align: center;
+    
+}
+
+.title-word {
+    margin-bottom: -5vw;
+}
+
 #board {
     background-color: red;
     height: 100vh;
