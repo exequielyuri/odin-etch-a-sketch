@@ -1,11 +1,16 @@
-/**
- * for-loop: create divs
- * 
- */
+function changeBoardSize() {
+    const size = sizeSlider.value + "vw";
+    grid.style.setProperty("width", size);
+}
 
-const container = document.getElementById("container");
-const dimension = 100;
+
+const grid = document.getElementById("grid");
+const board = document.getElementById("board");
+const sizeSlider = document.getElementById("size-slider");
+
+const dimension = 5;
 const cells = [];
+const penColor = "green";
 
 for (let i=0; i < dimension**2; i++) {
     cells.push(document.createElement("div"));
@@ -13,9 +18,10 @@ for (let i=0; i < dimension**2; i++) {
 
 cells.forEach((cell) => {
     cell.classList.add("cell");
-    container.appendChild(cell);
-    cell.addEventListener('mouseover', () => cell.style.cssText = "background-color: black");
+    cell.addEventListener('mouseover', ()=>cell.style.cssText = `background-color: ${penColor}`);
+    grid.appendChild(cell);
 });
 
-container.style.cssText = `grid-template-columns: repeat(${dimension}, 1fr)`;
+grid.style.cssText = `grid-template-columns: repeat(${dimension}, auto)`;
 
+sizeSlider.addEventListener('input', changeBoardSize);
