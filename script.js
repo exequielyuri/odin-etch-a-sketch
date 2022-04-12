@@ -35,4 +35,5 @@ sizeSlider.addEventListener('input', changeBoardSize);
 pixelSlider.addEventListener('mouseup', () => {
     deleteCells();
     createGrid(pixelSlider.value);
+    changeBoardSize();
 });
