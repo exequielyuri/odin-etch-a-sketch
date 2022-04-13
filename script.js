@@ -8,11 +8,6 @@ function changeColor() {
     cells.forEach((cell) => cell.style.setProperty("background-color", color));
 }
 
-function deleteCells() {
-    cells.forEach((cell) => grid.removeChild(cell));
-    cells = [];
-}
-
 function createGrid(dimension=16) { // default: 16*16
     for (let i=0; i < dimension**2; i++) {
         cells.push(document.createElement("div"));
@@ -27,26 +22,33 @@ function createGrid(dimension=16) { // default: 16*16
     grid.style.cssText = `grid-template-columns: repeat(${dimension}, auto)`;
 }
 
+function deleteCells() {
+    cells.forEach((cell) => grid.removeChild(cell));
+    cells = [];
+}
+
 function erase() {
     cells.forEach((cell) => cell.style.setProperty("opacity", 0));
 }
 
-const grid = document.getElementById("grid");
-const board = document.getElementById("board");
-const sizeSlider = document.getElementById("size-slider");
-const pixelSlider = document.getElementById("pixel-slider");
-const colorPicker = document.getElementById("color-picker");
-const eraseBtn = document.getElementById("erase");
-
-let cells = [];
-createGrid();
-
-sizeSlider.addEventListener('input', changeBoardSize);
-pixelSlider.addEventListener('mouseup', () => {
+function newBoard() {
     deleteCells();
     createGrid(pixelSlider.value);
     changeBoardSize();
     changeColor();
-});
-eraseBtn.addEventListener('click', erase);
+}
+
+let cells = [];
+const board = document.getElementById("board");
+const colorPicker = document.getElementById("color-picker");
+const eraseBtn = document.getElementById("erase");
+const grid = document.getElementById("grid");
+const pixelSlider = document.getElementById("pixel-slider");
+const sizeSlider = document.getElementById("size-slider");
+
 colorPicker.addEventListener('input', changeColor)
+eraseBtn.addEventListener('click', erase);
+pixelSlider.addEventListener('mouseup', newBoard);
+sizeSlider.addEventListener('input', changeBoardSize);
+
+newBoard(); // initial run
