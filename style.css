@@ -9,8 +9,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    
 }
 
 #text {
@@ -37,12 +35,18 @@ body {
 #settings {
     font-family: "Cabin Sketch", monospace;
     font-size: 3.5vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #board {
     background-color: white;
     height: 100vh;
     width: 50vw;
+    margin: 1vw;
 
     display: flex;
     justify-content: center;
@@ -68,7 +72,7 @@ body {
 }
 
 #erase {
-    width: 100%;
+    width: 80%;
     padding-top: 5%;
     padding-bottom: 5%;
     border: 1.5px solid black;
@@ -76,7 +80,7 @@ body {
 
     font-family: "Cabin Sketch", monospace;
     font-size: 3.5vw;
-    margin-top: 2vh;
+    margin-top: 1vw;
 
     background-color: white;
 }
@@ -90,4 +94,17 @@ body {
     50% {
         transform: scale(1.1);
     }
+}
+
+.slide-container, #color {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#size-slider,
+#pixel-slider,
+#color-picker {
+    margin-left: 2vw;
 }
