@@ -3,6 +3,11 @@ function changeBoardSize() {
     grid.style.setProperty("width", size);
 }
 
+function changeColor() {
+    const color = colorPicker.value;
+    cells.forEach((cell) => cell.style.setProperty("background-color", color));
+}
+
 function deleteCells() {
     cells.forEach((cell) => grid.removeChild(cell));
     cells = [];
@@ -43,3 +48,4 @@ pixelSlider.addEventListener('mouseup', () => {
     changeBoardSize();
 });
 eraseBtn.addEventListener('click', erase);
+colorPicker.addEventListener('input', changeColor)
