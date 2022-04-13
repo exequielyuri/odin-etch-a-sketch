@@ -15,7 +15,14 @@ function createGrid(dimension=16) { // default: 16*16
 
     cells.forEach((cell) => {
         cell.classList.add("cell");
-        cell.addEventListener('mouseover', ()=>cell.style.setProperty("opacity", 1));
+        cell.addEventListener('mouseover', () => {
+            let currentOpacity = cell.style.getPropertyValue("opacity");
+            if (currentOpacity == "") {
+                currentOpacity = 0;
+            }
+            let newOpacity = Number(currentOpacity) + 0.1;
+            cell.style.setProperty("opacity", newOpacity);
+        });
         grid.appendChild(cell);
     });
 
