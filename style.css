@@ -10,7 +10,7 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    background: lightpink;
+    
 }
 
 #text {
@@ -27,7 +27,7 @@ body {
     font-family: "Cabin Sketch", monospace;
     font-size: 9vw;
     text-align: center;
-    margin-bottom: 5vw;
+    margin-bottom: 3vw;
 }
 
 .title-word {
@@ -51,9 +51,11 @@ body {
 
 #grid {
     display: grid;
-    border: 2px solid black;
+    border: 1.5px solid black;
 
-    width: 50vw;    
+    width: 50vw;
+
+    border-radius: 5px;
 }
 
 .cell {
@@ -63,4 +65,29 @@ body {
     /* 1:1 ratio */
     width: auto;
     padding-top: 100%;
+}
+
+#erase {
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border: 1.5px solid black;
+    border-radius: 10px;
+
+    font-family: "Cabin Sketch", monospace;
+    font-size: 3.5vw;
+    margin-top: 2vh;
+
+    background-color: white;
+}
+
+#erase:hover {
+    animation-name: plump;
+    animation-duration: 0.5s;
+}
+
+@keyframes plump {
+    50% {
+        transform: scale(1.1);
+    }
 }
