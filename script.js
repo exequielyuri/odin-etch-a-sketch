@@ -46,6 +46,7 @@ pixelSlider.addEventListener('mouseup', () => {
     deleteCells();
     createGrid(pixelSlider.value);
     changeBoardSize();
+    changeColor();
 });
 eraseBtn.addEventListener('click', erase);
 colorPicker.addEventListener('input', changeColor)
