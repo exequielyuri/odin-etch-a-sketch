@@ -1,5 +1,5 @@
 # Etch-A-Sketch
-This is a simple implementation of Etch-a-sketch toy. It is the 2nd to the last [project](https://www.theodinproject.com/lessons/foundations-etch-a-sketch) for the foundations path of [TOP] (https://www.theodinproject.com/). A demo can be found in this [link](https://exequielyuri.github.io/etch-a-sketch/).
+This is a simple implementation of Etch-a-sketch toy. It is the 2nd to the last [project](https://www.theodinproject.com/lessons/foundations-etch-a-sketch) for the foundations path of [TOP](https://www.theodinproject.com/). A demo can be found in this [link](https://exequielyuri.github.io/etch-a-sketch/).
 
 ## Things I learned
 - Manipulate the DOM
